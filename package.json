@@ -1,29 +1,29 @@
 {
   "author": "Ersun Warncke <ersun.warncke@gmail.com>",
   "dependencies": {
-    "immutable-core-model-view": "0.1.3"
+    "immutable-core-model-view": "0.2.0"
   },
   "description": "Immutable Model View to collect records into object keyed by property value",
   "devDependencies": {
     "chai": "3.5.0",
     "chai-as-promised": "6.0.0",
-    "immutable-core": "1.1.3",
-    "immutable-core-model": "0.6.10",
-    "immutable-database-mariasql": "1.1.0",
+    "immutable-core": "1.2.0",
+    "immutable-core-model": "1.3.0",
+    "immutable-database-mariasql": "1.2.0",
     "mocha": "3.2.0"
   },
   "directories": {
     "test": "test"
   },
   "engines": {
-    "node": ">=7.0.0"
+    "node": ">=7.6.0"
   },
   "license": "MIT",
   "main": "lib/immutable-model-view-key-by.js",
   "name": "immutable-model-view-key-by",
   "repository": "warncke/immutable-model-view-key-by",
   "scripts": {
-    "test": "mocha --harmony-async-await"
+    "test": "mocha"
   },
-  "version": "0.1.1"
+  "version": "0.2.0"
 }

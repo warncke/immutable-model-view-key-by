@@ -2,6 +2,11 @@
 
 Immutable Model View to collect records into object keyed by property value.
 
+## Native async/await
+
+Immutable Model View Key By requires Node.js v7.6.0 or greater with native
+async/await support.
+
 ## Creating a new keyBy Model View
 
     const ModelViewKeyBy = require('immutable-model-view-key-by')
