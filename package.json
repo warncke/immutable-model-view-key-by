@@ -1,15 +1,15 @@
 {
   "author": "Ersun Warncke <ersun.warncke@gmail.com>",
   "dependencies": {
-    "immutable-core-model-view": "0.2.7"
+    "immutable-core-model-view": "0.2.8"
   },
   "description": "Immutable Model View to collect records into object keyed by property value",
   "devDependencies": {
     "chai": "3.5.0",
     "chai-as-promised": "6.0.0",
-    "immutable-core": "1.2.10",
-    "immutable-core-model": "1.5.10",
-    "immutable-database-mariasql": "1.2.11",
+    "immutable-core": "1.2.12",
+    "immutable-core-model": "1.5.11",
+    "immutable-database-mariasql": "1.2.12",
     "mocha": "3.2.0"
   },
   "directories": {
@@ -25,5 +25,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "0.2.11"
+  "version": "0.2.12"
 }
