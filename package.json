@@ -8,7 +8,7 @@
     "chai": "3.5.0",
     "chai-as-promised": "6.0.0",
     "immutable-core": "1.2.13",
-    "immutable-core-model": "1.6.1",
+    "immutable-core-model": "1.6.2",
     "immutable-database-mariasql": "1.2.14",
     "mocha": "3.2.0"
   },
@@ -25,5 +25,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "0.2.14"
+  "version": "0.2.15"
 }
