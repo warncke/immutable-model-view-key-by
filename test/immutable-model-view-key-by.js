@@ -1,5 +1,6 @@
 'use strict'
 
+const ImmutableAccessControl = require('immutable-access-control')
 const ImmutableCoreModel = require('immutable-core-model')
 const ImmutableDatabaseMariaSQL = require('immutable-database-mariasql')
 const ModelViewKeyBy = require('../lib/immutable-model-view-key-by')
@@ -33,6 +34,7 @@ describe('immutable-model-view-key-by', function () {
     // fake session to use for testing
     var session = {
         accountId: '11111111111111111111111111111111',
+        roles: ['all', 'authenticated'],
         sessionId: '22222222222222222222222222222222',
     }
 
@@ -43,6 +45,7 @@ describe('immutable-model-view-key-by', function () {
     before(async function () {
         // reset immutable global data
         immutable.reset().strictArgs(false)
+        ImmutableAccessControl.reset()
         // create initial model
         glboalFooModel = new ImmutableCoreModel({
             database: database,
