@@ -1,7 +1,7 @@
 {
   "author": "Ersun Warncke <ersun.warncke@gmail.com>",
   "dependencies": {
-    "immutable-core-model-view": "0.4.33"
+    "immutable-core-model-view": "0.4.34"
   },
   "description": "Immutable Model View to collect records into object keyed by property value",
   "devDependencies": {
@@ -26,5 +26,5 @@
   "scripts": {
     "test": "mocha --exit"
   },
-  "version": "0.2.151"
+  "version": "0.2.152"
 }
