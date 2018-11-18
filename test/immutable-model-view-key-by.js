@@ -2,7 +2,6 @@
 
 const ImmutableAccessControl = require('immutable-access-control')
 const ImmutableCoreModel = require('immutable-core-model')
-const ImmutableDatabaseMariaSQL = require('immutable-database-mariasql')
 const ModelViewKeyBy = require('../lib/immutable-model-view-key-by')
 const Promise = require('bluebird')
 const chai = require('chai')
@@ -19,17 +18,13 @@ const dbUser = process.env.DB_USER || 'root'
 
 // use the same params for all connections
 const connectionParams = {
-    charset: 'utf8',
-    db: dbName,
+    database: dbName,
     host: dbHost,
     password: dbPass,
     user: dbUser,
 }
 
 describe('immutable-model-view-key-by', function () {
-
-    // create database connection to use for testing
-    var database = new ImmutableDatabaseMariaSQL(connectionParams)
 
     // fake session to use for testing
     var session = {
@@ -40,15 +35,17 @@ describe('immutable-model-view-key-by', function () {
 
     var glboalFooModel
 
-    var origBam, origBar, origFoo, origRecords
+    var mysql, origBam, origBar, origFoo, origRecords
 
     before(async function () {
         // reset immutable global data
         immutable.reset().strictArgs(false)
         ImmutableAccessControl.reset()
+        // create database client
+        mysql = await ImmutableCoreModel.createMysqlConnection(connectionParams)
         // create initial model
         glboalFooModel = new ImmutableCoreModel({
-            database: database,
+            mysql: mysql,
             name: 'foo',
             views: {
                 default: ModelViewKeyBy('foo')
@@ -57,7 +54,7 @@ describe('immutable-model-view-key-by', function () {
         // setup data to perform queries
         try {
             // drop any test tables if they exist
-            await database.query('DROP TABLE IF EXISTS foo')
+            await mysql.query('DROP TABLE IF EXISTS foo')
             // sync with database
             await glboalFooModel.sync()
             // create instances with different data values for testing
